@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.maman13.HelloController">
+   <Button layoutX="470.0" layoutY="5.0" mnemonicParsing="false" onAction="#undoLastMove" prefHeight="0.0" prefWidth="80.0" text="undo" />
+   <ColorPicker fx:id="whichColor" layoutY="5.0" onAction="#whichColorPicked" />
+   <ToggleButton fx:id="fill" layoutX="346.0" layoutY="5.0" mnemonicParsing="false" text="Fill">
+      <toggleGroup>
+         <ToggleGroup fx:id="fillOrNotFill" />
+      </toggleGroup>
+   </ToggleButton>
+   <ToggleButton fx:id="NoFill" layoutX="395.0" layoutY="5.0" mnemonicParsing="false" text="NoFill" toggleGroup="$fillOrNotFill" />
+   <RadioButton layoutX="139.0" layoutY="10.0" mnemonicParsing="false" onAction="#lineBtnPressed" text="Line">
+      <toggleGroup>
+         <ToggleGroup fx:id="whatShape" />
+      </toggleGroup>
+   </RadioButton>
+   <RadioButton layoutX="254.0" layoutY="10.0" mnemonicParsing="false" onAction="#rectBtnPressed" text="Rectangle" toggleGroup="$whatShape" />
+   <RadioButton layoutX="193.0" layoutY="10.0" mnemonicParsing="false" onAction="#circleBtnPressed" text="Circle" toggleGroup="$whatShape" />
+   <Button layoutX="558.0" layoutY="5.0" mnemonicParsing="false" onAction="#clearWindow" prefHeight="0.0" prefWidth="80.0" text="clear" />
+   <Pane fx:id="myPane" layoutY="41.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#startDraw" onMouseReleased="#endDraw" prefHeight="450.0" prefWidth="650.0" />
+</AnchorPane>
